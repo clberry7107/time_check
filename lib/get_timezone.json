@@ -1,0 +1,50 @@
+{
+	"type"=>"FeatureCollection", 
+	"features"=>  [
+                  {"type"=>"Feature", 
+                  "properties"=>	{	"datasource"=>  {
+                                                      "sourcename"=>"openstreetmap", 
+                                                      "attribution"=>"© OpenStreetMap contributors", 
+                                                      "license"=>"Open Database License", 
+                                                      "url"=>"https://www.openstreetmap.org/copyright"
+                                                    }, 
+                                    "country"=>"United States", 
+                                    "country_code"=>"us", 
+                                    "state"=>"Ohio", 
+                                    "county"=>"Cuyahoga County", 
+                                    "city"=>"Highland Heights", 
+                                    "postcode"=>"44143", 
+                                    "street"=>"Bishop Road", 
+                                    "housenumber"=>"514", 
+                                    "lon"=>-81.47846990625, 
+                                    "lat"=>41.552001796875, 
+                                    "state_code"=>"OH", 
+                                    "distance"=>1.6707528586081413, 
+                                    "result_type"=>"building", 
+                                    "formatted"=>"514 Bishop Road, Highland Heights, OH 44143, United States of America", 
+                                    "address_line1"=>"514 Bishop Road", 
+                                    "address_line2"=>"Highland Heights, OH 44143, United States of America", 
+                                    "timezone"=>  { 
+                                                    "name"=>"America/New_York", 
+                                                    "offset_STD"=>"-05:00", 
+                                                    "offset_STD_seconds"=>-18000, 
+                                                    "offset_DST"=>"-04:00", 
+                                                    "offset_DST_seconds"=>-14400, 
+                                                    "abbreviation_STD"=>"EST", 
+                                                    "abbreviation_DST"=>"EDT"
+                                                  }, 
+                                    "plus_code"=>"86HWHG2C+RJ", 
+                                    "plus_code_short"=>"+RJ, 44143 Highland Heights, United States", 	
+                                    "rank"=>	{	
+                                                "importance"=>-1.15, 
+                                                "popularity"=>3.5985647571107457
+                                              }, 
+                                    "place_id"=>"51b1dd3d409f5e54c059a774b0fea7c64440f00102f901f5e4371200000000c00203"
+                                  }, 
+                    "geometry"=>	{	"type"=>"Point", 
+                                    "coordinates"=>[-81.47846990625, 41.552001796875]
+                                  }, 	
+                    "bbox"=>[-81.47851990625, 41.551951796875, -81.47841990625, 41.552051796875]
+                  }
+                ], 
+					"query"=>{"lat"=>41.551995, "lon"=>-81.478452, "plus_code"=>"86HWHG2C+QJ"}}
