@@ -1,5 +1,5 @@
-#! /usr/bin/ruby 
 
+<<<<<<< HEAD
 #api keys
 module API_KEYS
     # Time API is free
@@ -16,3 +16,5 @@ end
 module FILE_NAMES
     DB = "data/tcdata.db"
 end
+=======
+>>>>>>> 737401f02b42ac8506b9d0d40c70cc863e821951
