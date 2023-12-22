@@ -1,9 +1,11 @@
 #! /usr/bin/ruby 
 
-class Office
-  attr_reader :name, :brand, :city, :state, :country, :timezone, :location, :postal_code
+require 'json'
 
-  def initialize(params)
+class Office
+  attr_reader :name, :brand, :city, :state, :country, :timezone, :lat, :lon, :postal_code
+
+  def initialize(new, params)
     @name = params[:name]
     @brand = params[:brand]
     @city = params[:city]
@@ -12,9 +14,19 @@ class Office
     @postal_code = params[:postal_code]
     @timezone = params[:timezone]
     @location = {lat: 0, lon: 0}
+    @lat = 0
+    @lon = 0
 
-    set_location
-    set_timezone
+    if new
+      set_location
+      set_timezone
+    end
+  end
+
+  def self.create(params)
+    hparams = HASH::from_string(params)
+    object = self.new(false, hparams)
+    return object
   end
 
   def current_time
@@ -34,24 +46,24 @@ class Office
       <td>#{@state}</td>
       <td>#{@country}</td>
       <td>#{@postal_code}</td>
-      <td>#{@location[:lat]}, #{@location[:lon]}</td>
+      <td>#{@lat}, #{@lon}</td>
     </tr>"
   end
 
   def to_hash
-    {name: @name, brand: @brand, city: @city, state: @state, country: @country, postal_code: @postal_code, timezone: @timezone, location: @location}
+    {name: @name, brand: @brand, city: @city, state: @state, country: @country, postal_code: @postal_code, timezone: @timezone, lat: @lat, lon: @lon}
   end
 
   private
 
   def set_location
     geoloc = Hash(get_geocode(@city, @state, @country, @postal_code))
-    @location[:lat] = geoloc[:lat]
-    @location[:lon] = geoloc[:lon]
+    @lat = geoloc[:lat]
+    @lon = geoloc[:lon]
   end
 
   def set_timezone
-    @timezone = get_timezone(@location[:lat], @location[:lon])
+    @timezone = get_timezone(@lat, @lon)
   end
 
   
