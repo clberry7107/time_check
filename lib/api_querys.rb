@@ -15,7 +15,7 @@ end
 
 def get_timezone(lat, lon)
   #puts "Geoapify key: #{API_KEYS::GEOAPIFY}"
-  responce = URI.open("https://api.geoapify.com/v1/geocode/reverse?lat=#{lat}&lon=#{lon}&apiKey=#{API_KEYS::GEOAPIFY.gsub(/[\"]/,'')}").string
+  responce = URI.open(".v1/geocode/reverse?lat=#{lat}&lon=#{lon}&apiKey=#{API_KEYS::GEOAPIFY.gsub(/[\"]/,'')}").string
   parsed = JSON.parse(responce)
   features = parsed["features"]
   f_string = features[0].to_s

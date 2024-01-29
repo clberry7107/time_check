@@ -5,10 +5,6 @@ class TC_DATA
         @db = nil
     end
 
-    def db_exist?
-        File.exist?(FILE_NAMES::DB)
-    end
-
     def data_check
         if self.db_exist?
             puts "The data base exists!"
@@ -33,6 +29,10 @@ class TC_DATA
     end
 
 private
+
+    def db_exist?
+        File.exist?(FILE_NAMES::DB)
+    end
 
     def create_db
         puts "We are creating a database now, please stand by."
